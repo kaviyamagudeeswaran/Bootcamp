@@ -1,0 +1,175 @@
+!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Page</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+header {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+}
+.card {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-color: #ffffff;
+}
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.product-image,
+.recommended-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+.product-image:hover,
+.recommended-container img:hover {
+  transform: scale(1.05);
+}
+.product-container {
+  background-color: #e3f2fd; /* Light Blue */
+  padding: 20px;
+  border-radius: 12px;
+}
+.recommended-container {
+  background-color: #fce4ec; /* Light Pink */
+  padding: 20px;
+  border-radius: 12px;
+}
+.btn-custom {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn-custom:hover {
+  background-color: #22d49f;
+  transform: scale(1.1);
+}
+
+.btn-wishlist {
+  background-color: #6c757d;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn-wishlist:hover {
+  background-color: #0eba17;
+  transform: scale(1.1);
+}
+
+.btn-view-more {
+  background-color: #8d958f;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn-view-more:hover {
+  background-color: #19da33;
+  transform: scale(1.1);
+}
+.form-select {
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.form-select:hover {
+  background-color: #e9ecef;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Product Showcase</h1>
+    </header>
+    <main class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card p-4 product-container">
+            <h2 class="text-center">SmartWatch X5000</h2>
+
+            <div class="text-center">
+              <center><img
+                class="product-image"
+                src="/images/smartwatch.jpg"
+                alt="Smartwatch"
+              /></center>
+            </div>
+
+            <p class="mt-3 text-center">
+              Stay connected and on top of your fitness goals with the SmartWatch
+              X5000. This sleek and feature-packed smartwatch tracks your heart
+              rate, steps, and calories burned, while also receiving notifications
+              and controlling your music playback.
+            </p>
+            <div class="text-center text-muted">
+              <span class="fw-bold">4.5/5</span> (100+ reviews)
+            </div>
+            <div class="text-center mt-3">
+              <button class="btn btn-custom me-2">Buy Now</button>
+              <button class="btn btn-wishlist">Add to Wishlist</button>
+            </div>
+            <div class="mt-4">
+              <h5>Choose your size:</h5>
+              <select class="form-select w-50">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+          <div class="card p-3 text-center recommended-container">
+           <center> <img
+              src="/images/smartspeaker.jpg"
+              alt="Smart Speaker"
+              class="img-fluid rounded"
+              style="width: 120px; height: 120px"
+            /></center>
+            <h5 class="mt-2">Smart Speaker</h5>
+            <p>Enjoy crystal-clear sound with effortless voice control.</p>
+            <button class="btn btn-view-more">View More</button>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="card p-3 text-center recommended-container">
+           <center><img
+              src="/images/wireless headphone.jpg"
+              alt="Wireless Headphones"
+              class="img-fluid rounded"
+              style="width: 120px; height: 120px"
+            /></center> 
+            <h5 class="mt-2">Wireless Headphone</h5>
+            <p>Immersive audio, advanced noise cancellation, sleek design.</p>
+            <button class="btn btn-view-more">View More</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html> 

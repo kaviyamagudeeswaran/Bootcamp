@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <h2 class="mb-4">Image Slider</h2>
+        <div id="imageSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-inner">
+                <div class="carousel-item active fade">
+                    <img src="images/mountain.jpg" class="d-block mx-auto" alt="Mountain">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Beautiful Mountain</h5>
+                    </div>
+                </div>
+                <div class="carousel-item fade">
+                    <img src="images/ocean.jpg" class="d-block mx-auto" alt="Ocean">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Peaceful Ocean</h5>
+                    </div>
+                </div>
+                <div class="carousel-item fade">
+                    <img src="images/sunrise.jpg" class="d-block mx-auto" alt="Sunrise">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Sunrise View</h5>
+                    </div>
+                </div>
+                <div class="carousel-item fade">
+                    <img src="images/sunset.jpg" class="d-block mx-auto" alt="Sunset">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Beautiful Sunset</h5>
+                    </div>
+                </div>
+                <div class="carousel-item fade">
+                    <img src="images/cloud image.jpg" class="d-block mx-auto" alt="Clouds">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Cloudy Sky</h5>
+                    </div>
+                </div>
+                <div class="carousel-item fade">
+                    <img src="images/rain.jpg" class="d-block mx-auto" alt="Rain">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Rainy Day</h5>
+                    </div>
+                </div>
+            </div>
+            <!-- Controls with < > symbols -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#imageSlider" data-bs-slide="prev">
+                <span class="nav-button">&#10094;</span> <!-- ‹ Symbol -->
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#imageSlider" data-bs-slide="next">
+                <span class="nav-button">&#10095;</span> <!-- › Symbol -->
+            </button>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

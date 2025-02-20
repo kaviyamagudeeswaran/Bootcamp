@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+       body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    background-image: url("images/cal.jpg");
+    background-size: cover;  /* Ensures the image covers the full viewport */
+    background-position: center;  /* Centers the image */
+    background-repeat: no-repeat;  /* Prevents repeating */
+}
+
+        .calculator {
+            width: 300px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            background: white;
+            text-align: center;
+        }
+        .calculator input[type="text"] {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 10px;
+            text-align: right;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 5px;
+            padding-right: 10px;
+            box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.1);
+        }
+        .btn-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .btn {
+            height: 50px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+        }
+        .btn-clear {
+            grid-column: span 2;
+            background-color: #be898e;
+            color: white;
+        }
+        .btn-equal {
+            background-color: #9fe2ae;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="result" readonly>
+        <div class="btn-grid">
+            <button class="btn btn-danger btn-clear" onclick="clearAll()">AC</button>
+            <button class="btn btn-warning" onclick="deleteLast()">DEL</button>
+            <button class="btn btn-primary" onclick="appendValue('/')">/</button>
+            <button class="btn btn-primary" onclick="appendValue('*')">*</button>
+            <button class="btn btn-light" onclick="appendValue('7')">7</button>
+            <button class="btn btn-light" onclick="appendValue('8')">8</button>
+            <button class="btn btn-light" onclick="appendValue('9')">9</button>
+            <button class="btn btn-primary" onclick="appendValue('-')">-</button>
+            <button class="btn btn-light" onclick="appendValue('4')">4</button>
+            <button class="btn btn-light" onclick="appendValue('5')">5</button>
+            <button class="btn btn-light" onclick="appendValue('6')">6</button>
+            <button class="btn btn-primary" onclick="appendValue('+')">+</button>
+            <button class="btn btn-light" onclick="appendValue('1')">1</button>
+            <button class="btn btn-light" onclick="appendValue('2')">2</button>
+            <button class="btn btn-light" onclick="appendValue('3')">3</button>
+            <button class="btn btn-success btn-equal" onclick="calculate()">=</button>
+            <button class="btn btn-light" onclick="appendValue('0')">0</button>
+            <button class="btn btn-light" onclick="appendValue('.')">.</button>
+        </div>
+    </div>
+    <script>
+        function appendValue(value) {
+            document.getElementById('result').value += value;
+        }
+        function calculate() {
+            try {
+                document.getElementById('result').value = eval(document.getElementById('result').value);
+            } catch {
+                document.getElementById('result').value = "Error";
+            }
+        }
+        function clearAll() {
+            document.getElementById('result').value = "";
+        }
+        function deleteLast() {
+            let current = document.getElementById('result').value;
+            document.getElementById('result').value = current.slice(0, -1);
+        }
+    </script>
+</body>
+</html>

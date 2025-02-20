@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show/Hide Content</title>
+
+    <!-- Bootstrap for Better Styling -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Background Styling */
+     body {
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Arial", sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* Glassmorphism Container with Gradient */
+.content-container {
+    background: linear-gradient(
+        135deg,
+        rgba(230, 153, 10, 0.889),
+        #b2101033
+    ); /* Removed incorrect semicolon */
+    backdrop-filter: blur(10px); /* Add this for the glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(182, 7, 7, 0.1);
+
+        backdrop-filter: blur(10px);
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0px 10px 20px rgba(179, 147, 147, 0.6);
+        width: 80%;
+        max-width: 500px;
+        text-align: center;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+      }
+
+      .content-container:hover {
+        transform: scale(1.05);
+        background: linear-gradient(
+          135deg,
+          rgba(169, 203, 15, 0.3),
+          rgba(28, 207, 4, 0.827)
+        );
+      }
+
+      /* Button Styling */
+      .toggle-btn {
+        background: linear-gradient(45deg, #007bff, #00d4ff);
+        border: none;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .toggle-btn:hover {
+        background: linear-gradient(45deg, #0056b3, #00b3cc);
+        transform: scale(1.1);
+      }
+
+      /* Hidden Content */
+      .content-section {
+        margin-top: 10px;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        display: none;
+      }
+
+      /* Show Content Animation */
+      .content-section.show {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Image Styling */
+      .content-section img {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 10px;
+        margin-top: 10px;
+      }
+
+      /* Paragraph Styling */
+      .content-section p {
+        font-size: 16px;
+        color: #f8f9fa;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body style="background-image:url('images/imag.jpg');">
+    <h1 style="color:rgb(233, 233, 243)">Collapsible Content</h1>
+    <div class="content-container">
+      <h3>🌿 Nature</h3>
+      <button class="toggle-btn" onclick="toggleContent('section1', this)">
+        Show Content
+      </button>
+      <div id="section1" class="content-section">
+        <img src="images/nature.jpg" alt="Nature Image" />
+        <p>
+          Nature is the greatest healer. Enjoy the greenery and the beauty of
+          our planet. 🌍
+        </p>
+      </div>
+    </div>
+
+    <div class="content-container">
+      <h3>🚀 Space</h3>
+      <button class="toggle-btn" onclick="toggleContent('section2', this)">
+        Show Content
+      </button>
+      <div id="section2" class="content-section">
+        <img src="images/space.jpg" alt="Space Image" />
+        <p>
+          Explore the vastness of space, where mysteries await discovery. 🌌✨
+        </p>
+      </div>
+    </div>
+
+    <div class="content-container">
+      <h3>🎨 Art</h3>
+      <button class="toggle-btn" onclick="toggleContent('section3', this)">
+        Show Content
+      </button>
+      <div id="section3" class="content-section">
+        <img src="images/art.jpg" alt="Art Image" />
+        <p>
+          Art is a reflection of emotions and creativity. Express yourself
+          freely. 🎭🎨
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function toggleContent(sectionId, button) {
+        const content = document.getElementById(sectionId);
+
+        if (content.classList.contains("show")) {
+          content.classList.remove("show");
+          setTimeout(() => (content.style.display = "none"), 500); // Delay hiding
+          button.textContent = "Show Content";
+        } else {
+          content.style.display = "block";
+          setTimeout(() => content.classList.add("show"), 10);
+          button.textContent = "Hide Content";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Count & Stop Watch</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Arial", sans-serif;
+      }
+
+     body {
+    background: linear-gradient(to right, rgba(20, 30, 48, 0.8), rgba(36, 59, 85, 0.8)), 
+                url("images/clocks.jpg");
+    background-size: cover; /* Ensures the image covers the full screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating */
+    background-attachment: fixed; /* Keeps it fixed while scrolling */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+}
+
+
+      .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        align-items: center;
+        justify-items: center;
+        gap: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        width: 350px;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 28px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      /* Timer Display */
+      .timer-display {
+        font-size: 50px;
+        font-weight: bold;
+        margin: 10px 0;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        animation: glow 1.5s infinite alternate;
+      }
+
+      /* Glow Effect */
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        to {
+          text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+        }
+      }
+
+      /* Buttons */
+      .btn {
+        margin: 10px;
+        font-size: 18px;
+        padding: 12px 20px;
+        border-radius: 50px;
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+      }
+
+      .btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+      }
+
+      .start {
+        background-color: #28a745;
+        color: white;
+      }
+
+      .stop {
+        background-color: #dc3545;
+        color: white;
+      }
+
+      .reset {
+        background-color: #ffc107;
+        color: black;
+      }
+
+      /* Switch Mode */
+      .form-check-label {
+        font-size: 16px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+
+      .form-check-input {
+        transform: scale(1.3);
+      }
+
+      /* Loader Animation */
+      .loader {
+        width: 60px;
+        height: 60px;
+        border: 6px solid rgba(255, 255, 255, 0.2);
+        border-top: 6px solid #fff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        display: none;
+        margin: 10px auto;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body >
+    <div class="container">
+      <h1><i class="fa fa-clock"></i> Count & Stopwatch</h1>
+
+      <!-- Loader Animation -->
+      <div class="loader"></div>
+
+      <div class="timer-display">00:00:00</div>
+
+      <div>
+        <button class="btn start"><i class="fa fa-play"></i> Start</button>
+        <button class="btn stop"><i class="fa fa-pause"></i> Stop</button>
+        <button class="btn reset"><i class="fa fa-sync"></i> Reset</button>
+      </div>
+
+      <div class="form-check form-switch mt-3">
+        <input
+          class="form-check-input mode-toggle"
+          type="checkbox"
+          id="modeToggle"
+        />
+        <label class="form-check-label" for="modeToggle"
+          >Switch to Timer Mode</label
+        >
+      </div>
+    </div>
+
+    <script>
+      let timerDisplay = document.querySelector(".timer-display");
+      let startBtn = document.querySelector(".start");
+      let stopBtn = document.querySelector(".stop");
+      let resetBtn = document.querySelector(".reset");
+      let modeToggle = document.querySelector(".mode-toggle");
+      let loader = document.querySelector(".loader");
+
+      let timer;
+      let isRunning = false;
+      let seconds = 0;
+      let mode = "stopwatch";
+
+      function formatTime(sec) {
+        let hrs = Math.floor(sec / 3600);
+        let mins = Math.floor((sec % 3600) / 60);
+        let secs = sec % 60;
+        return (
+          (hrs < 10 ? "0" + hrs : hrs) +
+          ":" +
+          (mins < 10 ? "0" + mins : mins) +
+          ":" +
+          (secs < 10 ? "0" + secs : secs)
+        );
+      }
+
+      function startTimer() {
+        if (!isRunning) {
+          isRunning = true;
+          loader.style.display = "block"; // Show loader
+          setTimeout(() => {
+            loader.style.display = "none"; // Hide loader after delay
+            timer = setInterval(() => {
+              if (mode === "stopwatch") {
+                seconds++;
+              } else {
+                if (seconds > 0) {
+                  seconds--;
+                } else {
+                  clearInterval(timer);
+                  isRunning = false;
+                  return;
+                }
+              }
+              timerDisplay.textContent = formatTime(seconds);
+            }, 1000);
+          }, 1000);
+        }
+      }
+
+      function stopTimer() {
+        clearInterval(timer);
+        isRunning = false;
+      }
+
+      function resetTimer() {
+        stopTimer();
+        seconds = mode === "stopwatch" ? 0 : 60;
+        timerDisplay.textContent = formatTime(seconds);
+      }
+
+      modeToggle.addEventListener("change", function () {
+        mode = this.checked ? "timer" : "stopwatch";
+        resetTimer();
+        document.querySelector(".form-check-label").textContent = this.checked
+          ? "Switch to Stopwatch Mode"
+          : "Switch to Timer Mode";
+      });
+
+      startBtn.addEventListener("click", startTimer);
+      stopBtn.addEventListener("click", stopTimer);
+      resetBtn.addEventListener("click", resetTimer);
+
+      resetTimer();
+    </script>
+  </body>
+</html>
