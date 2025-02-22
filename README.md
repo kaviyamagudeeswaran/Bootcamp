@@ -1,6 +1,4 @@
-Here’s your updated plan with icons for all days:  
 
----
 
 ### **Day 2-3: Front-end Foundations** 🎨  
 - Learned **HTML**: structure, tags, and attributes 🏗️  
@@ -18,6 +16,4 @@ Here’s your updated plan with icons for all days:
 - Started building a **server-side application** with Node.js 🌍  
 - Explored the basics of **setting up a REST API** with Express.js 🌐  
 
----
 
-Let me know if you want any modifications! 🚀🔥
