@@ -1,20 +1,14 @@
-# Bootcamp**🌐 Dynamic Webpage**  
+Day 2-3: Front-end Foundations
+- Learned HTML: structure, tags, and attributes
+- Learned CSS: styling, layout, and responsive design
+- Introduced to Bootstrap: a popular front-end framework
 
-**📖 What I Learned**  
-- Explored **JavaScript (JS)** to create a **dynamic webpage**  
-- Learned **ES6 features** for better code structure and efficiency  
-- Implemented **Bootstrap** to enhance UI responsiveness  
+Day 4: JavaScript Basics
+- Learned JavaScript fundamentals: variables, data types, loops, and functions
+- Understood DOM manipulation and event handling
+- Started building interactive web pages
 
-**📌 JavaScript Concepts Used**  
-- ⚡ **DOM Manipulation** : Updated webpage content dynamically  
-- 🔄 **Event Listeners** : Handled user interactions efficiently  
-- 🎭 **ES6 Features** : Used `let`, `const`, arrow functions, and template literals  
-
-**🎨 CSS & Bootstrap Used**  
-- 🎨 Styled elements dynamically using **CSS**  
-- 🏗️ Used **Bootstrap grid and flexbox** for layout  
-- ✨ Applied **hover and transition effects** for smooth animations  
-
-**🚀 Additional Skills**  
-- 📊 Integrated **real-time updates** using JS  
- 
+Day 5: Node.js and Back-end Development
+- Introduced to Node.js: a JavaScript runtime for back-end development
+- Learned about modules, packages, and npm
+- Started building server-side applications with Node.js
