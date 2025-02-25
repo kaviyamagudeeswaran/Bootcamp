@@ -14,6 +14,13 @@
 - Introduced to **Node.js**: a JavaScript runtime for back-end development 🖥️  
 - Learned about **modules, packages, and npm** 📦  
 - Started building a **server-side application** with Node.js 🌍  
-- Explored the basics of **setting up a REST API** with Express.js 🌐  
+- Explored the basics of **setting up a REST API** with Express.js 🌐
+
+###  **DAY-6:CRUD Using Node.js with Postmanapi**
+
+✅ What I Learned
+1️⃣ How to use Postman to send GET, POST, PUT, DELETE requests.
+2️⃣ How to pass JSON data in the request body and test API responses.
+3️⃣ How to check status codes (200, 400, 404, 500) and debug API issues. 🚀
 
 
