@@ -14,7 +14,7 @@
 - Introduced to **Node.js**: a JavaScript runtime for back-end development 🖥️  
 - Learned about **modules, packages, and npm** 📦  
 - Started building a **server-side application** with Node.js 🌍  
-- Explored the basics of **setting up a REST API** with Express.js 🌐
+  
 
 ###  **DAY-6:CRUD Using Node.js with Postmanapi**
 
