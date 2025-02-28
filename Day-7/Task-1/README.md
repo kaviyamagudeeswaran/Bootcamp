@@ -1,18 +1,20 @@
-Hello World Component
-🖥 What I Learned:
+Create Student API Endpoint (POST)
 
-Basics of React components
-JSX syntax for rendering elements
+📖 What I Learned:
 
+Setting up an Express.js server
+Handling POST requests
+Using MongoDB to insert documents
+Ensuring uniqueness for rollNo/studentId
 
-⚙ What I Implemented:
+🔨 What I Implemented:
 
-Created a React functional component
-Displayed a static message using JSX
+Created a /students POST route
+Validated and inserted student data into MongoDB
+Checked for duplicate rollNo/studentId
+ 
+ 🛠 Technologies Used:
 
-
-🔧 Technologies Used:
-
-React
-JSX
-
+Express.js
+MongoDB (insertOne)
+Mongoose (Schema & Validation)
