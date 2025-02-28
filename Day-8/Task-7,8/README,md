@@ -1,0 +1,31 @@
+Searchable Student List
+🖥 What I Learned:
+
+Using state for dynamic updates
+Handling user input with event listeners (onChange)
+Filtering arrays based on user input
+⚙ What I Implemented:
+
+Added a search input
+Filtered student list based on search query
+🔧 Technologies Used:
+
+React useState
+Event handling (onChange)
+JavaScript .filter()
+8. Add/Remove Student
+🖥 What I Learned:
+
+Managing dynamic data with useState
+Updating component state on user interaction
+Implementing add and remove functions
+⚙ What I Implemented:
+
+Form to add new students
+Button to remove students
+Updated the list dynamically
+🔧 Technologies Used:
+
+React useState
+Event handling
+JavaScript .filter()
