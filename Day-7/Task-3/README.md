@@ -1,12 +1,14 @@
+Get Student by ID API Endpoint (GET)
+📖 What I Learned:
 
-Styled Student Name
+Extracting parameters from URLs using Express
+Fetching a single document by its ObjectId
+🔨 What I Implemented:
 
-🖥 What I Learned:
+Created a /students/:id GET route
+Used findById() to retrieve a student by ID
+Handled errors if the ID was not found
+🛠 Technologies Used:
 
-Applying styles in React
-Using inline styles vs CSS
-
-⚙ What I Implemented:
-
-Styled text color (blue) and font size (24px)
-Used inline CSS or external stylesheets
+Express.js
+MongoDB (findById)
