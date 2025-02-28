@@ -1,0 +1,33 @@
+Student List
+
+🖥 What I Learned:
+
+Rendering lists dynamically using .map()
+Handling arrays in React
+
+⚙ What I Implemented:
+
+Created a list of student objects
+Used .map() to generate multiple StudentCard components
+
+🔧 Technologies Used:
+
+React
+JavaScript .map()
+
+  Conditional Styling
+
+🖥 What I Learned:
+
+Applying conditional styles based on props
+Using inline styles and CSS classes dynamically
+
+⚙ What I Implemented:
+
+Changed card background based on student year
+Applied different colors dynamically
+
+🔧 Technologies Used:
+
+React conditional rendering
+CSS
