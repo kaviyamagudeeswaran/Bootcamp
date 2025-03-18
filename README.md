@@ -33,12 +33,22 @@ Built core Student API endpoints using **Express.js and MongoDB**, implementing 
 ### **📅 Day 8: Enhancing API with Validation & Search**  
 Enhanced the API by adding **input validation, pagination, and search functionality** using **express-validator** and MongoDB’s **skip, limit, and regex**. Implemented **structured responses** for better usability. Improved API efficiency for handling large datasets. 🚀
 
-###**📅 Day 9: React, APIs**
-Learnt:
- I learned about React and APIs, focusing on how to fetch and display data efficiently. I also explored React Router for handling nested routes and navigation.
 
-Implemented:
-I integrated APIs into my project and implemented icons 🖼️ using the React Icons library to enhance the UI. Additionally, I worked on improving navigation with a sidebar and nested routes. 🚀
+
+# 📚 Day - 9  
+
+### **🎯 Learned:**  
+✅ Understanding React and API integration for fetching and displaying data.  
+✅ Implementing React Router for navigation and handling nested routes.  
+✅ Exploring state management and asynchronous data handling in React.  
+
+### **🛠️ Implemented:**  
+🚀 Integrated APIs into the project for real-time data fetching.  
+🎨 Added icons using the **React Icons** library to enhance UI.  
+🗂️ Created a sidebar with **nested routes** for better navigation.  
+⚡ Improved UI by adding smooth animations and structured components.  
+
+
 ### **📅 Day 10:✅  Simple Task Manager App
 📌 Task Manager App
 
